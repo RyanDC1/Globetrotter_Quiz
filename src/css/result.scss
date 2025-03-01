@@ -1,0 +1,21 @@
+.card {
+    max-width: 800px;
+    min-width: 200px;
+    margin-top: 64px !important;
+    text-align: center;
+
+    .image {
+        width: 50% !important;
+    }
+
+    .ant-card-actions {
+        li {
+            margin: 0 !important;
+            
+            .ant-btn {
+                height: 48px;
+                border-radius: 0 0 4px 4px;
+            }
+        }
+    }
+}

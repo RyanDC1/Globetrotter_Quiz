@@ -1,0 +1,44 @@
+@use './variables.scss' as var;
+
+.card {
+    margin-top: 64px !important;
+    max-width: 800px;
+    min-width: 200px;
+    width: 800px;
+    text-align: center;
+
+    .clues {
+        .ant-typography {
+            margin-top: 0px;
+        }
+    }
+
+    .ant-card-meta-description {
+        padding: 12px;
+    }
+
+    .question {
+        width: 100%;
+    }
+
+    .question-card {
+        &.selected {
+            background: var.$selected-option-bg;
+            color: white;
+        }
+    }
+}
+
+.feedback-modal {
+    .feedback-title {
+        white-space: break-spaces;
+    }
+    .trivia-fact {
+        margin: 8px 0;
+    }
+
+    .action-btn {
+        height: 48px;
+        margin-top: 8px;
+    }
+}
