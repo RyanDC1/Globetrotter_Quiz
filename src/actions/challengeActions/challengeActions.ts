@@ -3,8 +3,11 @@
 import { Challenge, CreateChallengeParams } from "@/models/challenge";
 import challenge from "../../../db/schema/challenge";
 import { headers } from "next/headers";
+import { connectToDB } from "../../../db";
 
 export async function createChallenge(params: CreateChallengeParams) {
+    await connectToDB()
+    
     const {} = await headers()
 
     const result = await challenge.findOneAndUpdate(
@@ -28,6 +31,8 @@ export async function createChallenge(params: CreateChallengeParams) {
 }
 
 export async function getChallenge(id: string) : Promise<Challenge> {
+    await connectToDB()
+
     const result = await challenge.findById(id)
     return result?.toJSON() as Challenge
 }
