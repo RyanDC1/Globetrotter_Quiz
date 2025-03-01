@@ -3,7 +3,7 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { Button, Card, Flex, Image, Space, Typography } from 'antd'
 import { RedoOutlined, UsergroupAddOutlined } from '@ant-design/icons'
-import { appRoutes, MAX_SCORE, scoreMessages, SessionStoreKeys } from '@/utils/Constants'
+import { appRoutes, MAX_SCORE, scoreMessages } from '@/utils/Constants'
 import { useRouter } from 'next/navigation'
 import { getUserScoreFromStore } from '@/utils/helpers'
 import { InviteModal } from '../invite'
@@ -59,7 +59,6 @@ export default function Result() {
                     }
                     description={
                         <Space direction='vertical'>
-                            
                             <Image
                                 className='image'
                                 preview={false}

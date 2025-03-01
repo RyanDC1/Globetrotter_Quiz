@@ -1,17 +1,15 @@
-'use client'
-
 import { SessionStoreKeys } from "../Constants"
 
 export const getUserScoreFromStore = () => {
-    let score = sessionStorage.getItem(SessionStoreKeys.USER_SCORE)
+    try {
+        let score = sessionStorage?.getItem(SessionStoreKeys.USER_SCORE)
 
-    if (score) {
-        try {
+        if (score) {
             return ~~score
         }
-        catch (error) {
-            return 0
-        }
+    }
+    catch (error) {
+        return 0
     }
 
     return 0
