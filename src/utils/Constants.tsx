@@ -2,10 +2,12 @@ export const appRoutes = {
     root: '/',
     trivia: '/trivia',
     results: '/results',
-    invite: '/invites/{id}'
+    invite: '/invites/{id}',
+    invite_whatsapp: '/invites/whatsapp/{id}'
 }
 
 export const INVITE_URL = process.env.NEXT_PUBLIC_APP_URL + appRoutes.invite
+export const WHATSAPP_INVITE_URL = process.env.NEXT_PUBLIC_APP_URL + appRoutes.invite_whatsapp
 
 export const successMessages = [
     "You're absolutely right! Well done!",
