@@ -2,13 +2,10 @@
 
 import { Challenge, CreateChallengeParams } from "@/models/challenge";
 import challenge from "../../../db/schema/challenge";
-import { headers } from "next/headers";
 import { connectToDB } from "../../../db";
 
 export async function createChallenge(params: CreateChallengeParams) {
     await connectToDB()
-    
-    const {} = await headers()
 
     const result = await challenge.findOneAndUpdate(
         {
