@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start"
   },
@@ -13,7 +13,7 @@
     "antd": "^5.24.2",
     "mongodb": "^6.14.0",
     "mongoose": "^8.11.0",
-    "next": "15.2.0",
+    "next": "^14",
     "nextjs-progressbar": "^0.0.16",
     "react": "^18.0.0",
     "react-confetti": "^6.3.0",
@@ -25,7 +25,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^9",
-    "eslint-config-next": "15.2.0",
+    "eslint-config-next": "^14",
     "sass": "^1.85.1",
     "typescript": "^5"
   }
