@@ -23,7 +23,6 @@ export default function TriviaCard() {
 
     const [message, messageContext] = antMessage.useMessage()
 
-    const [initialLoading, setInitialLoading] = useState(true)
     const [isLoading, setIsLoading] = useState(true)
     const [isVerifying, setIsVerifying] = useState(false)
     const [question, setQuestion] = useState<TriviaQuestion>()
@@ -64,9 +63,6 @@ export default function TriviaCard() {
                 message.error("An error occurred, redirecting to home...")
                 router.push('/')
             })
-            .finally(() => {
-                setInitialLoading(false)
-            })
     }, [])
 
     useEffect(() => {
@@ -78,7 +74,7 @@ export default function TriviaCard() {
     }, [progress?.score])
 
     return (
-        <Spin spinning={initialLoading}>
+        <Spin spinning={isVerifying}>
             {messageContext}
             {feedbackContext}
             <Flex align='center' justify='center'>
