@@ -7,12 +7,11 @@ import MainLayout from "@/components/layout/MainLayout";
 export const metadata: Metadata = {
   title: "Globetrotter - Online Quiz",
   description: "An online quiz app to test your knowledge",
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL),
-  openGraph: {
-    images: '/logo.svg',
-    title: 'Globetrotter - Explore the World Through Trivia',
-    description: 'Expand your global knowledge with our fun and engaging trivia app. Learn interesting facts about cities and countries while challenging your friends.'
-  }
+  // openGraph: {
+  //   images: '/logo.svg',
+  //   title: 'Globetrotter - Explore the World Through Trivia',
+  //   description: 'Expand your global knowledge with our fun and engaging trivia app. Learn interesting facts about cities and countries while challenging your friends.'
+  // }
 };
 
 const theme: ThemeConfig = {
