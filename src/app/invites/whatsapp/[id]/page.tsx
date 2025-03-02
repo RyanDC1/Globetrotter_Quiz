@@ -1,21 +1,15 @@
 import { getChallenge } from "@/actions/challengeActions";
 import { InviteDetails } from "@/components/invite";
+import { Challenge } from "@/models/challenge";
+import { appRoutes } from "@/utils/Constants";
 import { Metadata } from "next";
+import { notFound, redirect } from 'next/navigation'
 
 interface Request {
     params: Promise<{ id: string }>
 }
 
-type Props = {
-    params: { id: string }
-    searchParams: { [key: string]: string | string[] | undefined }
-}
-
-export async function generateMetadata(
-    { searchParams }: Props
-): Promise<Metadata> {
-    // read route params
-    const test = searchParams?.['test']
+export async function generateMetadata(): Promise<Metadata> {
 
     return {
         title: "Globetrotter - Online Quiz",
@@ -34,11 +28,19 @@ export default async function Invite(request: Request) {
 
     const { id } = await request.params
 
-    const challengerDetails = await getChallenge(id as string)
+    return redirect(appRoutes.invite.replace('{id}', id))
 
-    return (
-        <InviteDetails
-            {...challengerDetails}
-        />
-    );
+    // let challengerDetails: Challenge | null = null
+    // try {
+    //     challengerDetails = await getChallenge(id as string)
+    // } catch (error) {
+    //     return notFound()
+    // }
+
+    // return (
+    //     challengerDetails != null &&
+    //     <InviteDetails
+    //         {...challengerDetails}
+    //     />
+    // );
 }
