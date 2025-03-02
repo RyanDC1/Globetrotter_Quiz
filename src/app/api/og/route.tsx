@@ -1,6 +1,8 @@
 import { ImageResponse } from 'next/og';
  
-export async function GET() {
+export async function GET(request: Request) {
+  const { searchParams } = new URL(request.url);
+
   return new ImageResponse(
     (
       <div
@@ -16,7 +18,9 @@ export async function GET() {
           alignItems: 'center',
         }}
       >
-        👋 Hello
+        {
+          searchParams.has('test') ? 'test' : 'hello'
+        }
       </div>
     ),
     {
